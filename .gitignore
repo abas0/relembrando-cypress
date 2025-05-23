@@ -1,0 +1,22 @@
+*.war
+
+# Large media files
+*.mp4
+*.tiff
+*.avi
+*.flv
+*.mov
+*.wmv
+
+# cypress
+cypress/downloads
+cypress/screenshots
+cypress/videos
+cypress/reports
+cypress/snapshots/**/diffs
+cypress/reports/junit/*
+cucumber-messages.ndjson
+cucumber-report.html
+
+#env
+.env.dev
