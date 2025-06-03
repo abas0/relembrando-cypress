@@ -18,15 +18,15 @@ if (!process.env.BASE_URL) {
   throw new Error('❌ BASE_URL não definida!');
 }
 
-const e2e = {
-    baseUrl : process.env.BASE_URL, //baseUrl muda de servidor para servidor
-    env:{
-        username: process.env.USER,
-        password: process.env.PASSWORD
-    }
-}
-
 module.exports = defineConfig({
-    ...baseConfig, //copiando as configurações base
-    e2e
-})
+  e2e: {
+    baseUrl: process.env.BASE_URL,
+    env: {
+      username: process.env.USER,
+      password: process.env.PASSWORD,
+    },
+    setupNodeEvents(on, config) {
+      return config;
+    },
+  },
+});
