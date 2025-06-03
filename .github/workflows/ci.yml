@@ -13,9 +13,11 @@ jobs:
       BASE_URL: ${{ secrets.BASE_URL }}
       USERNAME: ${{ secrets.USERNAME }}
       PASSWORD: ${{ secrets.PASSWORD }}
+      environment: dev
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout do código
+        uses: actions/checkout@v4
 
       - name: Instala Node.js
         uses: actions/setup-node@v4
@@ -25,6 +27,9 @@ jobs:
       - name: Instala dependências
         run: npm install
 
+      - name: Debug baseUrl
+        run: echo "BASE_URL is $BASE_URL"
+
       - name: Executa Cypress
         run: |
-          npx cypress run --env environment=dev
+          npx cypress run
