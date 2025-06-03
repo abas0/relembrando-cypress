@@ -3,9 +3,13 @@ const baseConfig = require('./cypress.config'); //importando as configurações 
 const dotenv = require('dotenv')
 const path = require('path')
 
-dotenv.config({
-    path: path.resolve(__dirname, './.env.dev')
-})
+// dotenv.config({
+//     path: path.resolve(__dirname, './.env.dev')
+// })
+
+if (process.env.CI !== 'true') {
+  dotenv.config({ path: path.resolve(__dirname, './.env.dev') });
+}
 
 const e2e = {
     baseUrl : process.env.BASE_URL, //baseUrl muda de servidor para servidor
