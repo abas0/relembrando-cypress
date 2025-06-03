@@ -1,3 +1,5 @@
+name: Run Cypress tests
+
 on: [push, pull_request]
 
 jobs:
