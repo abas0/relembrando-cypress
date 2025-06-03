@@ -1,5 +1,5 @@
 const { defineConfig } = require('cypress');
-const baseConfig = require('./cypress.config');
+const baseConfig = require('./cypress.config'); //importando as configurações base 
 const dotenv = require('dotenv')
 const path = require('path')
 
@@ -8,7 +8,7 @@ dotenv.config({
 })
 
 const e2e = {
-    baseUrl : process.env.BASE_URL,
+    baseUrl : process.env.BASE_URL, //baseUrl muda de servidor para servidor
     env:{
         username: process.env.USER,
         password: process.env.PASSWORD
