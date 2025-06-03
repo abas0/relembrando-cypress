@@ -6,8 +6,8 @@ class Login{
     }
 
     preencherCredenciaisValidas(){
-        cy.get(el.username).type(Cypress.env('username'))
-        cy.get(el.password).type(Cypress.env('password')) // como proteger a senha? 
+        cy.get(el.username).type(Cypress.env('username'), { log: false })
+        cy.get(el.password).type(Cypress.env('password'), { log: false }) // como proteger a senha? 
         cy.get(el.loginButton).click()
     }
 

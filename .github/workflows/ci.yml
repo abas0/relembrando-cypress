@@ -11,7 +11,7 @@ jobs:
 
     env:
       BASE_URL: ${{ secrets.BASE_URL }}
-      USERNAME: ${{ secrets.USERNAME }}
+      USER: ${{ secrets.USER }}
       PASSWORD: ${{ secrets.PASSWORD }}
       environment: dev
 
